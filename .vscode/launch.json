@@ -1,0 +1,315 @@
+{
+	// IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+	// 기존 특성에 대한 설명을 보려면 가리킵니다.
+	// 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "(gdb) 시작",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) Windows 시작의 Bash",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) 연결",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"processId": "${command:pickProcess}",
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(Windows) 시작",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"console": "externalTerminal"
+		},
+		{
+			"name": "(gdb) 시작",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) Windows 시작의 Bash",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) 시작",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "(gdb) 시작",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+
+		{
+			"name": "(gdb) Windows 시작의 Bash",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"address": "TCP/IP address of process to be debugged",
+			"localRoot": "${workspaceFolder}",
+			"name": "Attach to Remote",
+			"port": 9229,
+			"remoteRoot": "Absolute path to the remote directory containing the program",
+			"request": "attach",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "(gdb) Windows 시작의 Bash",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+
+		{
+			"name": "(Windows) 시작",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"console": "externalTerminal"
+		},
+		{
+			"name": "(gdb) Windows 시작의 Bash",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "gdb에 자동 서식 지정 사용",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "디스어셈블리 버전을 Intel(으)로 설정",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		}
+	]
+}
