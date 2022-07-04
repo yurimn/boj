@@ -19,7 +19,7 @@ int main(){
     cin.tie(0);
     string st;
     cin >> st;
-    cout << st.length();
+    cout << st.size();
 
     return 0;
 }
