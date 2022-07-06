@@ -21,9 +21,8 @@ int main(){
     vector<ll> ab(26,-1);
     string str;
     cin >> str;
-    for(i = 0; i <str.size(); i++) {
-        if(ab[str[i]-'a'] == -1) ab[str[i]-'a'] = i;
+    for(i='a';i<='z';i++){
+        cout<<(ll)str.find(i)<<' ';
     }
-    for(ll k:ab) cout << k << ' ';
     return 0;
 }
