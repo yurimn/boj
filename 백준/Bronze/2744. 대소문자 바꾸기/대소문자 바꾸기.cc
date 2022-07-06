@@ -21,10 +21,7 @@ int main(){
     string str;
     cin>>str;
 
-    for(char & k:str) {
-        if(k >= 'a') k -= 32;
-        else k += 32;
-    }
+    for(char&k:str)[](char&x){x=islower(x)?toupper(x):tolower(x);}(k);
 
     cout<<str;
     return 0;
