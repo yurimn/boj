@@ -20,14 +20,8 @@ int main(){
     ll a, b, c;
     cin >> a>> b>> c;
     string st = to_string(a*b*c);
-    vector<ll> num(10);
-    fill(all(num), 0);
-
-    for(char s:st) {
-        num[s-'0']++;
-    }
-    for(ll n:num) {
-        cout << n << '\n';
+    for(ll i=0;i<10;i++){
+        cout<<count(all(st),i+'0')<<'\n';
     }
 
     return 0;
