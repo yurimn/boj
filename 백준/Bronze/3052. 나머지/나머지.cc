@@ -19,12 +19,11 @@ int main(){
     cin.tie(0);
     ll i,j;
     ll n = 10;
-    vector<ll> v(10);
-    for(ll &k:v) {
-        cin >> k;
-        k %= 42;
+    vector<bool> v(42);
+    for(i=0;i<10;i++) {
+        cin >> j;
+        v[j%42]=1;
     }
-    sort(all(v));
-    cout << unique(all(v)) - v.begin();
+    cout<<count(all(v),true);
     return 0;
 }
