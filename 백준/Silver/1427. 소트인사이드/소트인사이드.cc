@@ -20,7 +20,7 @@ int main(){
     ll i,j;
     string st;
     cin >>st;
-    sort(all(st), [](char &a, char &b){return a>b;});
+    sort(all(st),greater<>());
     cout << st;
 
     return 0;
