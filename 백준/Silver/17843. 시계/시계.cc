@@ -33,20 +33,14 @@ int main(){
     cin.tie(0);
     ll i,j;
     long double t, h, m, s;
-    vector<long double> a(3);
     cin >> t;
     while(t--) {
         cin >> h >> m >> s;
         h = h*30 + m*0.5 + s*0.5/60.0;
         m = m*6 + s*0.1;
         s *= 6;
-        a[0] = abs(h-m);
-        a[1] = abs(m-s);
-        a[2] = abs(s-h);
-        for(auto &k:a) {
-            if(k > 180) k = 360-k;
-        }
-        cout <<fixed<<setprecision(6) <<*min_element(all(a)) << '\n';
+        cout <<fixed<<setprecision(6) <<
+         min({abs(h-m), abs(m-s), abs(s-h), 360-abs(h-m), 360-abs(m-s), 360-abs(s-h)}) << '\n';
 
     }
 
