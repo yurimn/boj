@@ -34,9 +34,8 @@ int main(){
     ll i,j;
     string st;
     cin >> st;
-    for(i = 1; i <= st.size(); i++) {
-        cout<< st[i-1];
-        if(!(i%10)) cout << '\n';
+    for(i = 0; i < st.size(); i+=10) {
+       cout << st.substr(i, 10) << '\n';
     }
 
     return 0;
