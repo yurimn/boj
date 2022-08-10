@@ -51,19 +51,12 @@ int main(){
     ll n;
     cin>>n;
     vector<vector<char>>arr((1<<n)-1,vector<char>((2<<n)-3, ' '));
-    if(n&1){
-        f(n,arr,(1<<n)-2,0);
-        j=(2<<n)-3;
-        for(i=(1<<n)-2;i>=0;i--){
-            arr[i].resize(j--);
-        }
-    }
-    else {
-        f(n,arr,0,0);
-        j=(2<<n)-3;
-        for(i=0;i<(1<<n)-1;i++){
-            arr[i].resize(j--);
-        }
+    f(n,arr,((1<<n>>1)-1)*(1-pow(-1,n)),0);
+    j=(2<<n)-3;
+    i=((1<<n>>1)-1)*(1-pow(-1,n));
+    while(0<=i&&i<(1<<n)-1){
+        arr[i].resize(j--);
+        i+=pow(-1,n);
     }
     for(auto&k:arr){
         for(auto&kk:k)cout<<kk;
