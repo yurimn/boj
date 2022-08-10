@@ -27,32 +27,33 @@ constexpr bool ndebug = false;
 ll gcd(ll a, ll b){return b?gcd(b,a%b):a;}
 ll lcm(ll a, ll b){if(a&&b)return a*(b/gcd(a,b)); return a+b;}
 ll POW(ll a, ll b, ll rem){ll p=1;for(;b;b/=2,a=(a*a)% rem)if(b&1)p=(p*a)%rem;return p;}
-void f(ll k, vector<vector<char>> &v, ll n) {
-    if(k==1) return;
-    f(k/3, v, n);
-    ll b = k/3; // b = 1: 한줄 빈칸 개수, n = 27, k = 3
-    for(ll i=0; i< n/k; i++) {
-        for(ll j= 0; j < n/k; j++) {
-            for(ll x = 0; x < b; x++) {
-                for(ll y = 0; y < b; y++) {
-                    v[i*k+b+x][j*k+b+y] = ' ';
-                }
-            }
-        }
+
+void f(ll n, vector<vector<char>>&arr, ll x, ll y){
+    if(n==3){
+        arr[x][y]=arr[x][y+1]=arr[x][y+2]
+        =arr[x+1][y]           =arr[x+1][y+2]
+        =arr[x+2][y]=arr[x+2][y+1]=arr[x+2][y+2]='*';
+        arr[x+1][y+1]=' ';
+    }
+    else{
+        f(n/3,arr,x,y);         f(n/3,arr,x,y+n/3);         f(n/3,arr,x,y+n*2/3);
+        f(n/3,arr,x+n/3,y);                                 f(n/3,arr,x+n/3,y+n*2/3);
+        f(n/3,arr,x+n*2/3,y);   f(n/3,arr,x+n*2/3,y+n/3);   f(n/3,arr,x+n*2/3,y+n*2/3);
     }
 }
+
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    ll i,j, n;
-    cin >> n;
-    vector<vector<char>> v(n, vector<char> (n, '*'));
-    f(n, v, n);
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) cout << v[i][j];
-        cout << '\n';
+    ll i,j;
+    ll n;
+    cin>>n;
+    vector<vector<char>>arr(n,vector<char>(n, ' '));
+    f(n,arr,0,0);
+    for(auto&k:arr){
+        for(auto&kk:k)cout<<kk;
+        cout<<'\n';
     }
-
     return 0;
 }
