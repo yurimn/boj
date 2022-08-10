@@ -27,54 +27,32 @@ constexpr bool ndebug = false;
 ll gcd(ll a, ll b){return b?gcd(b,a%b):a;}
 ll lcm(ll a, ll b){if(a&&b)return a*(b/gcd(a,b)); return a+b;}
 ll POW(ll a, ll b, ll rem){ll p=1;for(;b;b/=2,a=(a*a)% rem)if(b&1)p=(p*a)%rem;return p;}
-void f(ll k, vector<vector<char>> &v, ll n) {
-    if(k < 3) return;
-    f(k/2, v, n);
-    ll b = k/2;
-    for(ll i=0; i< n/k; i++) {
-        for(ll j= 0; j < (n/k)*2; j++) {
-            for(ll x = 0; x < b; x++) {
-                for(ll y = 0; y < 2*(b-x)-1; y++) {
-                    v[i*k+b+x][j*k+x*2+1+y] = ' ';
-                }
-            }
-        }
+
+void f(ll n, vector<vector<char>>&arr, ll x, ll y){
+    if(n==3){
+                                    arr[x][y+2]
+                    =arr[x+1][y+1]                 =arr[x+1][y+3]
+        =arr[x+2][y+0]=arr[x+2][y+1]=arr[x+2][y+2]=arr[x+2][y+3]=arr[x+2][y+4]='*';
+
+    }
+    else{
+                                            f(n/2,arr,x,y+n/2);
+                        f(n/2,arr,x+n/2,y); f(n/2,arr,x+n/2,y+n);
     }
 }
+
 
 int main(){
-    //ios_base::sync_with_stdio(0);
-    //cin.tie(0);
-    ll i,j, n;
-    cin >> n;
-    vector<vector<char>> v(n, vector<char> (n*2, '*'));
-    f(n, v, n);
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n-i-1; j++) cout << ' ';
-        for(j = 0; j < i*2+1; j++) cout << v[i][j];
-        for(j = 0; j < n-i-1; j++) cout << ' ';
-        cout <<'\n';
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    ll i,j;
+    ll n;
+    cin>>n;
+    vector<vector<char>>arr(n,vector<char>(2*n, ' '));
+    f(n,arr,0,0);
+    for(auto&k:arr){
+        for(auto&kk:k)cout<<kk;
+        cout<<'\n';
     }
-
     return 0;
 }
-
-/*
-
-
-*
-* *
-*****
-*     *
-* *   * *
-***** *****
-*           *
-* *         * *
-*****       *****
-*     *     *     *
-* *   * *   * *   * *
-***** ***** ***** *****
-
-
-*/
-
