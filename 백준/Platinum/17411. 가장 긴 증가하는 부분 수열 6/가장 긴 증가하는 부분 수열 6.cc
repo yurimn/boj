@@ -29,8 +29,8 @@ ll lcm(ll a, ll b){if(a&&b)return a*(b/gcd(a,b)); return a+b;}
 ll POW(ll a, ll b, ll rem){ll p=1;for(;b;b/=2,a=(a*a)% rem)if(b&1)p=(p*a)%rem;return p;}
 
 int main(){
-//    ios_base::sync_with_stdio(0);
-//    cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     ll m = 1000000007;
     ll i,j,n;
     cin>>n;
