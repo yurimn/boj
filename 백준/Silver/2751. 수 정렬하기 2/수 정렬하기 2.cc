@@ -32,15 +32,10 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll i,j,n;
-    cin >>n;
+    cin>>n;
     vector<ll> v(n);
-    for(auto &k:v) {
-        cin >> k;
-    }
+    for(auto &vv:v) cin>>vv;
     sort(all(v));
-    for(auto k:v) {
-        cout << k<<'\n';
-    }
-
+    for(auto vv:v)cout<<vv<<' ';
     return 0;
 }
