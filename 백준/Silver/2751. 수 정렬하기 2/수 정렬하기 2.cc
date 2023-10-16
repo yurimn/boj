@@ -27,15 +27,19 @@ constexpr bool ndebug = false;
 ll gcd(ll a, ll b){return b?gcd(b,a%b):a;}
 ll lcm(ll a, ll b){if(a&&b)return a*(b/gcd(a,b)); return a+b;}
 ll POW(ll a, ll b, ll rem){ll p=1;for(;b;b/=2,a=(a*a)% rem)if(b&1)p=(p*a)%rem;return p;}
-
+ll v[1'000'000+1];
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll i,j,n;
     cin>>n;
-    vector<ll> v(n);
-    for(auto &vv:v) cin>>vv;
-    sort(all(v));
-    for(auto vv:v)cout<<vv<<' ';
+    for(i=0;i<n;i++){
+        cin>>v[i];
+    }
+    sort(v,v+n);
+    for(i=0;i<n;i++){
+        cout<<v[i]<<' ';
+    }
+    
     return 0;
 }
